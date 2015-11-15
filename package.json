@@ -1,0 +1,26 @@
+{
+  "name": "example-aws-sns-https-auth-hapi",
+  "version": "1.0.0",
+  "description": "Example AWS SNS HTTPS w/ Basic Authentication Subscriber",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxbeatty/example-aws-sns-https-auth-hapi.git"
+  },
+  "author": "Max Beatty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxbeatty/example-aws-sns-https-auth-hapi/issues"
+  },
+  "homepage": "https://github.com/maxbeatty/example-aws-sns-https-auth-hapi#readme",
+  "dependencies": {
+    "boom": "3.0.0",
+    "hapi": "11.1.1",
+    "hapi-auth-basic": "4.0.0",
+    "joi": "7.0.0"
+  }
+}
