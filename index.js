@@ -44,6 +44,9 @@ server.register([
     path: '/sns',
     config: {
       auth: 'default',
+      payload: {
+        override: 'application/json'
+      },
       validate: {
         payload: Joi.object().keys({
           Type: Joi.string(),

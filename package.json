@@ -22,7 +22,7 @@
     "good": "6.4.0",
     "good-console": "5.2.0",
     "hapi": "11.1.1",
-    "hapi-auth-basic": "maxbeatty/hapi-auth-basic#647d497",
+    "hapi-auth-basic": "maxbeatty/hapi-auth-basic#57b59bb",
     "joi": "7.0.0"
   }
 }
