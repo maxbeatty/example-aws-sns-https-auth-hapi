@@ -3,12 +3,6 @@ const Joi = require('joi')
 const Boom = require('boom')
 const https = require('https')
 
-const internals = {}
-
-internals.auth = function (request, username, password, callback) {
-  callback(null, (username === 'alice' && password === 'example'), {})
-}
-
 const server = new Hapi.Server()
 server.connection({ port: process.env.PORT })
 
@@ -35,7 +29,13 @@ server.register([
   })
 
   server.auth.strategy('default', 'basic', 'required', {
-    validateFunc: internals.auth,
+    validateFunc: function (request, username, password, callback) {
+      server.log(['debug'], {
+        username: username,
+        password: password
+      })
+      callback(null, (username === 'alice' && password === 'example'), {})
+    },
     unauthorizedAttributes: { realm: 'example' }
   })
 
