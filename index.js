@@ -10,13 +10,33 @@ internals.auth = function (request, username, password, callback) {
 }
 
 const server = new Hapi.Server()
-server.connection()
+server.connection({ port: process.env.PORT })
 
-server.register(require('hapi-auth-basic'), (err) => {
+server.register([
+  require('hapi-auth-basic'),
+  {
+    register: require('good'),
+    options: {
+      reporters: [{
+        reporter: require('good-console'),
+        events: { log: '*', request: '*', response: '*' }
+      }]
+    }
+  }
+], (err) => {
   if (err) throw err
 
+  server.ext({
+    type: 'onPreAuth',
+    method: function (request, reply) {
+      server.log(['debug'], request.headers)
+      return reply.continue()
+    }
+  })
+
   server.auth.strategy('default', 'basic', 'required', {
-    validateFunc: internals.auth
+    validateFunc: internals.auth,
+    unauthorizedAttributes: { realm: 'example' }
   })
 
   server.route({

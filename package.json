@@ -19,8 +19,10 @@
   "homepage": "https://github.com/maxbeatty/example-aws-sns-https-auth-hapi#readme",
   "dependencies": {
     "boom": "3.0.0",
+    "good": "6.4.0",
+    "good-console": "5.2.0",
     "hapi": "11.1.1",
-    "hapi-auth-basic": "4.0.0",
+    "hapi-auth-basic": "maxbeatty/hapi-auth-basic#647d497",
     "joi": "7.0.0"
   }
 }
