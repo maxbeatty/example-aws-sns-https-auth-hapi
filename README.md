@@ -1,6 +1,6 @@
 # Example AWS SNS HTTPS w/ Basic Authentication Subscriber
 
-Read my blog for more context.
+Read [my blog post](http://maxbeatty.com/blog/2015/11/aws-sns-https-auth-subscription/) for more context.
 
 ## Setup
 
